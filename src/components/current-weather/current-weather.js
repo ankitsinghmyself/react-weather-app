@@ -63,8 +63,8 @@ const CurrentWeather = ({ data, forecast }) => {
           backgroundImage:
             bgGif ??
             "url(https://mdbgo.io/ascensus/mdb-advanced/img/clouds.gif)",
-          backgroundSize: "cover",
-          position: "relative",
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
         }}
       >
         <div className="top">

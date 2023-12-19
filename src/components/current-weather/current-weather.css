@@ -75,4 +75,7 @@
   .bottom {
     justify-content: stretch;
   }
+  .weather{
+    width: 100%;
+  }
 }
