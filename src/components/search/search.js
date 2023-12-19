@@ -10,7 +10,12 @@ const Search = ({ onSearchChange, onGetCurrentLocation }) => {
     return fetch(
       `${GEO_API_URL}/direct?q=${inputValue}&limit=100&appid=${WEATHER_API_KEY}`
     )
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
       .then((response) => {
         return {
           options: response.map((city) => ({
@@ -18,8 +23,12 @@ const Search = ({ onSearchChange, onGetCurrentLocation }) => {
             label: `${city.name}, ${city.country}`,
           })),
         };
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
       });
   };
+  
 
   const handleOnChange = (searchData) => {
     setSearch(searchData);
