@@ -1,0 +1,69 @@
+.title {
+  font-size: 23px;
+  font-weight: 700;
+  text-align: left;
+  margin-left: auto;
+  padding: 20px;
+}
+
+.daily-item {
+  background-color: #0000002d;
+  border-radius: 15px;
+  height: 40px;
+  margin: 5px;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  padding: 5px 20px;
+}
+
+.icon-small {
+  width: 40px;
+}
+
+.daily-item .day {
+  cursor: inherit;
+  color: #212121;
+  flex: 1 1;
+  font-weight: 600;
+  margin-left: 15px;
+}
+
+.description {
+  cursor: inherit;
+  flex: 1 1;
+  margin-right: 15px;
+  text-align: right;
+}
+
+.min-max {
+  color: #757575;
+}
+
+.daily-details-grid {
+  grid-row-gap: 10px;
+  grid-column-gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  padding: 5px 15px;
+}
+
+.daily-details-grid-item {
+  align-items: center;
+  height: 30px;
+  justify-content: space-between;
+}
+
+.daily-details-grid-item label:first-child {
+  color: #757575;
+}
+
+.daily-details-grid-item label:last-child {
+  color: #212121;
+}
+
+/* Added styling for AccordionItemPanel */
+.AccordionItemPanel {
+  padding: 10px;
+}
