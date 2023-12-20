@@ -11,44 +11,48 @@ const CurrentWeather = ({ data, forecast }) => {
         .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(" ");
 
-      switch (main) {
-        case "Snow":
-          setBGGif(
-            "url('https://mdbgo.io/ascensus/mdb-advanced/img/snow.gif')"
-          );
-          break;
-        case "Clouds":
-          setBGGif(
-            "url('https://mdbgo.io/ascensus/mdb-advanced/img/clouds.gif')"
-          );
-          break;
-        case "Fog":
-          setBGGif("url('https://mdbgo.io/ascensus/mdb-advanced/img/fog.gif')");
-          break;
-        case "Rain":
-          setBGGif(
-            "url('https://mdbgo.io/ascensus/mdb-advanced/img/rain.gif')"
-          );
-          break;
-        case "Clear":
-          setBGGif(
-            "url('https://mdbgo.io/ascensus/mdb-advanced/img/clear.gif')"
-          );
-          break;
-        case "Thunderstorm":
-          setBGGif(
-            "url('https://mdbgo.io/ascensus/mdb-advanced/img/thunderstorm.gif')"
-          );
-          break;
-        case "Smoke":
-          setBGGif("url('https://mdbgo.io/ascensus/mdb-advanced/img/fog.gif')");
-          break;
-        default:
-          setBGGif(
-            "url('https://mdbgo.io/ascensus/mdb-advanced/img/clear.gif')"
-          );
-          break;
-      }
+        switch (main) {
+          case "Snow":
+          case "Sleet":
+          case "Freezing Rain":
+            setBGGif("url('https://mdbgo.io/ascensus/mdb-advanced/img/snow.gif')");
+            break;
+          case "Clouds":
+          case "Overcast":
+          case "Overcast Clouds":
+          case "Partly Cloudy":
+          case "Scattered Clouds":
+          case "Broken Clouds":
+          case "Few Clouds":
+            setBGGif("url('https://mdbgo.io/ascensus/mdb-advanced/img/clouds.gif')");
+            break;
+          case "Fog":
+          case "Haze":
+          case "Mist":
+            setBGGif("url('https://mdbgo.io/ascensus/mdb-advanced/img/fog.gif')");
+            break;
+          case "Rain":
+          case "Showers":
+          case "Light Rain":
+          case "Drizzle":
+            setBGGif("url('https://mdbgo.io/ascensus/mdb-advanced/img/rain.gif')");
+            break;
+          case "Clear":
+          case "Sunny":
+            setBGGif("url('https://mdbgo.io/ascensus/mdb-advanced/img/clear.gif')");
+            break;
+          case "Thunderstorm":
+          case "Thunder":
+            setBGGif("url('https://mdbgo.io/ascensus/mdb-advanced/img/thunderstorm.gif')");
+            break;
+          case "Smoke":
+            setBGGif("url('https://mdbgo.io/ascensus/mdb-advanced/img/fog.gif')");
+            break;
+          default:
+            setBGGif("url('https://mdbgo.io/ascensus/mdb-advanced/img/clear.gif')");
+            break;
+        }
+        
     };
 
     // Call the function when data changes
@@ -65,6 +69,8 @@ const CurrentWeather = ({ data, forecast }) => {
             "url(https://mdbgo.io/ascensus/mdb-advanced/img/clouds.gif)",
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
+          backgroundSize: 'cover',
+          backgroundBlendMode: 'hard-light',
         }}
       >
         <div className="top">
